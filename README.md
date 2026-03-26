@@ -53,7 +53,9 @@ def extremely_long_function(input_data):
     return result
 ```
 ````Typst
-模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。插入跨栏浮动图表如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope 
+模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。插入跨栏浮动图表如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope
+````
+跨栏图表示例：
 ````Typst
 #figure(
   // 你的图片或表格内容
@@ -62,7 +64,7 @@ def extremely_long_function(input_data):
   scope: "parent"     // 脱离当前单栏，跨越父级(页面)宽度
 )
 ````
-参考文献管理本模板采用国标 gb-7714-2015-numeric 格式。请将你的 BibTeX 文献条目添加到`bibs/template.bib`文件中。在正文中使用 @引用键值（例如 @typst2024）进行引用。文档末尾会自动生成参考文献列表。
+参考文献管理本模板采用国标 gb-7714-2015-numeric 格式。请将你的 BibTeX 文献条目添加到`bibs/template.bib`文件中。在正文中使用 @引用键值（例如`@typst2024`）进行引用。文档末尾会自动生成参考文献列表。
 
 ## 许可证
 本项目遵循开源精神，具体协议请参考根目录下的 `LICENSE` 文件。
