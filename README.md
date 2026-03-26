@@ -22,16 +22,18 @@
 - `bibs/template.bib`：BibTeX 参考文献数据库文件，用于存储文章的引用条目。
 - `README.md`：本说明文档。
 ## 样板文档预览
-![样板文档预览-1](artical-template/artical-template_00.jpg)
-![样板文档预览-2](artical-template/artical-template_01.jpg)
-![样板文档预览-3](artical-template/artical-template_02.jpg)
+![样板文档预览-1](artical-template/artical-template_00.png)
+![样板文档预览-2](artical-template/artical-template_01.png)
+![样板文档预览-3](artical-template/artical-template_02.png)
 ## 使用指南
-全局信息配置在`artical-template.typ` 文件的中下部，你可以找到`#show: article.with(...)`函数调用。你需要在这里填入你的论文元数据：
+你需要在同一个目录下创建一个你自己的论文的typ文件，然后引用模板文件后使用`#show: article.with(...)`函数调用就可以开始使用。
+把下面这一段代码复制粘贴进你创建的文件中即可使用：
 ```typst 
-#import "artical-template.typ": artical
+#import "artical-template.typ": artical //引用模板文件的模板
+//你需要在这里填入你的论文元数据：
 #show: article.with(
   title-cn: "基于 Typst 的学术论文自动化排版模板设计与实现",
-  title-en: "Design and Implementation of Academic Paper Automated...",
+  title-en: "Design and Implementation of Academic Paper Automated..."
   authors-cn: "张三, 李四, 王五",
   authors-en: "ZHANG San, LI Si, WANG Wu",
   affil-cn: "(某某大学 计算机科学与技术学院, 某省 某市 000000)",
@@ -43,9 +45,9 @@
   par-spacing: 1.2em,    // 控制正文段间距
   page-margin: (top: 2.5cm, bottom: 2.5cm, left: 1.8cm, right: 1.8cm) // 页面边距
 )
-编写正文与代码块直接在 #show 配置块之后使用标准的 Typst 语法编写正文。如需插入多行代码，请使用三个反引号包围：
 ```
-代码块示例：
+编写正文与代码块直接在 #show 配置块之后使用标准的 Typst 语法编写正文。如需插入多行代码，请使用三个反引号包围：
++ 代码块示例：
 ````Typst
 ```python
 def extremely_long_function(input_data):
@@ -55,7 +57,7 @@ def extremely_long_function(input_data):
 ````Typst
 模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。插入跨栏浮动图表如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope
 ````
-跨栏图表示例：
++ 跨栏图表示例：
 ````Typst
 #figure(
   // 你的图片或表格内容
@@ -64,7 +66,7 @@ def extremely_long_function(input_data):
   scope: "parent"     // 脱离当前单栏，跨越父级(页面)宽度
 )
 ````
-参考文献管理本模板采用国标 gb-7714-2015-numeric 格式。请将你的 BibTeX 文献条目添加到`bibs/template.bib`文件中。在正文中使用 @引用键值（例如`@typst2024`）进行引用。文档末尾会自动生成参考文献列表。
++ 参考文献管理本模板采用国标 gb-7714-2015-numeric 格式。请将你的 BibTeX 文献条目添加到`bibs/template.bib`文件中。在正文中使用 @引用键值（例如`@typst2024`）进行引用。文档末尾会自动生成参考文献列表。
 
 ## 许可证
 本项目遵循开源精神，具体协议请参考根目录下的 `LICENSE` 文件。
