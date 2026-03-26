@@ -55,7 +55,7 @@ def extremely_long_function(input_data):
 ````Typst
 模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。插入跨栏浮动图表如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope
 ````
-跨页图表示例：
+跨栏图表示例：
 ````Typst
 #figure(
   // 你的图片或表格内容
