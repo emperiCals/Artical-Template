@@ -22,9 +22,9 @@
 - `bibs/template.bib`：BibTeX 参考文献数据库文件，用于存储文章的引用条目。
 - `README.md`：本说明文档。
 ## 样板文档预览
-![样板文档预览-1](artical-template\artical-template_00.jpg)
-![样板文档预览-2](artical-template\artical-template_01.jpg)
-![样板文档预览-3](artical-template\artical-template_02.jpg)
+![样板文档预览-1](artical-template/artical-template_00.jpg)
+![样板文档预览-2](artical-template/artical-template_01.jpg)
+![样板文档预览-3](artical-template/artical-template_02.jpg)
 ## 使用指南
 全局信息配置在`artical-template.typ` 文件的中下部，你可以找到`#show: article.with(...)`函数调用。你需要在这里填入你的论文元数据：
 ```typst 

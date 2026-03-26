@@ -48,8 +48,8 @@
         }
         block(width: 100%)[
           #header-text
-          #v(4pt, weak: true)
-          #line(length: 100%, stroke: 0.5pt)
+          #v(6pt, weak: true)
+          #line(length: 100%, stroke: 1pt)
         ]
       }
     }
@@ -106,20 +106,22 @@
       #set text(size: 10pt, font: (..font-en, ..font-song))
       #journal-cn \
       #journal-en \
-      #v(0.3em)
-      #line(length: 100%, stroke: 0.5pt)
-      #v(0.5em)
+      #v(0.1em)
+      #line(length: 100%, stroke: 1pt)//第一根分割线
+      #v(-1.5em)
+      #line(length: 100%, stroke: 2pt)//第二根分割线
+      #v(0.05em)
       #text(font: font-en, weight: "bold")[DOI: ] #text(font: font-en)[#doi]
     ]
-    v(1.5em)
+    v(1em)
   }
 
   // 中文标题与作者区块
   align(center)[
     #text(font: (..font-en, ..font-hei), size: 22pt, weight: "bold")[#title-cn] \
-    #v(1.2em)
+    #v(1em)
     #text(font: (..font-en, ..font-kai), size: 12pt)[#authors-cn] \
-    #v(0.8em)
+    #v(1em)
     #text(font: (..font-en, ..font-song), size: 9pt)[#affil-cn]
   ]
   v(1.5em)
@@ -143,9 +145,9 @@
   // 英文标题与作者区块
   align(center)[
     #text(font: font-en, size: 16pt, weight: "bold")[#title-en] \
-    #v(1.2em)
+    #v(1em)
     #text(font: font-en, size: 10.5pt)[#authors-en] \
-    #v(0.8em)
+    #v(1em)
     #text(font: font-en, size: 9pt, style: "italic")[#affil-en]
   ]
   v(1.5em)
@@ -158,7 +160,7 @@
     #v(0.5em)
     #text(weight: "bold")[Key words: ] #keywords-en.join("; ")
   ]
-  v(3em) 
+  v(2em) 
 
   // ---------------- 4. 进入正文文档流 ----------------
   set text(font: (..font-en, ..font-song), size: 10.5pt)
@@ -252,34 +254,34 @@ def extremely_long_function(input_data):
 跨栏浮动图表依然支持 `placement: top` 和 `scope: "parent"`，确保其不打断正文逻辑流。
 
 #figure(
-  grid(
-    columns: 2, gutter: 3em,
-    rect(width: 100%, height: 4cm, fill: rgb("#eee"))[#align(center + horizon)[模拟子图 (A)]],
-    rect(width: 100%, height: 4cm, fill: rgb("#ddd"))[#align(center + horizon)[模拟子图 (B)]]
-  ),
-  caption: [跨栏展示的浮动子图效果演示],
-  placement: top,
-  scope: "parent"
-) <fig-demo>
+grid(
+columns: 2, gutter: 3em,
+rect(width: 100%, height: 4cm, fill: rgb("#eee"))[\#align(center + horizon)[模拟子图 (A)]],
+rect(width: 100%, height: 4cm, fill: rgb("#ddd"))[\#align(center + horizon)[模拟子图 (B)]]
+),
+caption: [跨栏展示的浮动子图效果演示],
+placement: top,
+scope: "parent"
+) \<fig-demo\>
 
 == 三线表排版
 #figure(
-  table(
-    columns: (1fr, 1fr, 1fr),
-    inset: 8pt, align: center, stroke: none,
-    table.hline(y: 0, stroke: 1.5pt), table.hline(y: 1, stroke: 0.5pt),
-    table.header([测试指标], [LaTeX], [Typst]),
-    [编译时间], [2.5s], [0.1s],
-    [包依赖], [复杂], [内置],
-    [实时预览], [不支持], [原生支持],
-    table.hline(stroke: 1.5pt),
-  ),
-  caption: [排版工具性能对比简表]
+table(
+columns: (1fr, 1fr, 1fr),
+inset: 8pt, align: center, stroke: none,
+table.hline(y: 0, stroke: 1.5pt), table.hline(y: 1, stroke: 0.5pt),
+table.header([测试指标], [LaTeX], [Typst]),
+[编译时间], [2.5s], [0.1s],
+[包依赖], [复杂], [内置],
+[实时预览], [不支持], [原生支持],
+table.hline(stroke: 1.5pt),
+),
+caption: [排版工具性能对比简表]
 )
 #colbreak()
 = 结论
 通过对 `raw` 选择器的修正以及对段落、行间距参数的系统化解耦，本模板在保持《山西大学学报》严谨排版风格的同时，显著增强了对不同长度内容（尤其是代码片段）的承载能力。这为理工科论文的快速排版提供了更加可靠的工具支持。
-\
+
 下面通过`#colbreak()`函数进行强制换栏演示单双页的不同
 #colbreak()
 #set text(size: 9pt)
