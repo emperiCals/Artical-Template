@@ -31,13 +31,16 @@
 ![样板文档预览-3](artical-template/artical-template_02.png)
 
 ## 使用指南
-
+你需要在同一个目录下创建一个你自己的论文的typ文件，然后引用模板文件后使用`#show: article.with(...)`函数调用就可以开始使用。
+把下面这一段代码复制粘贴进你创建的文件中即可使用：
 ```typst 
+#import "artical-template.typ": artical //引用模板文件的模板
+//你需要在这里填入你的论文元数据：
 #import "artical-template.typ": * // 引用模板文件中的全部函数
 // 你需要在这里填入你的论文元数据：
 #show: article.with(
   title-cn: "基于 Typst 的学术论文自动化排版模板设计与实现",
-  title-en: "Design and Implementation of Academic Paper Automated...",
+  title-en: "Design and Implementation of Academic Paper Automated..."
   authors-cn: "张三, 李四, 王五",
   authors-en: "ZHANG San, LI Si, WANG Wu",
   affil-cn: "(某某大学 计算机科学与技术学院, 某省 某市 000000)",
@@ -52,20 +55,18 @@
 ```
 
 编写正文与代码块直接在 #show 配置块之后使用标准的 Typst 语法编写正文。如需插入多行代码，请使用三个反引号包围：
-
-- 代码块示例：
-````typst
++ 代码块示例：
+````Typst
 ```python
 def extremely_long_function(input_data):
     result = [x * 2 for x in input_data if x % 2 == 0]
     return result
 ```
+````Typst
+模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。插入跨栏浮动图表如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope
 ````
-模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。
-
-- 跨栏图表示例：
-如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope：
-````typst
++ 跨栏图表示例：
+````Typst
 #figure(
   // 你的图片或表格内容
   caption: [跨栏展示的浮动图表],
