@@ -62,7 +62,7 @@ def extremely_long_function(input_data):
     result = [x * 2 for x in input_data if x % 2 == 0]
     return result
 ```
-````Typst
+````
 模板会自动为其添加灰色圆角背景、等宽字体，并在需要时自动换行。插入跨栏浮动图表如果在双栏排版中，图表过大需要跨越两栏展示，请在 #figure 中配置 placement 与 scope
 ````
 + 跨栏图表示例：
